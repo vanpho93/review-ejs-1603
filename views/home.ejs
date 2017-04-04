@@ -62,54 +62,9 @@ var bgStretch = true;
 		Caption and Description elementes
 	-->
 	<ul id="bgImages">
-		<li>
-			<img class="thumb" src="./images/background/1478695328795socket.io.png" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>ReacJS</h3>
-			<p>NodeJS Facebook</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
-		<li>
-			<img class="thumb" src="./images/background/18081777_th.jpg" alt="" />
-			<iframe src="http://player.vimeo.com/video/14506031?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-			<h3>NodeJS</h3>
-			<p>NodeJS là một mã nguồn mở</p>
-		</li>
+		<% mang.forEach(e => { %>
+			<%- include('row', e) %>
+		<% }) %> 
 </ul>
 	<!-- BEGIN: Main Menu -->
 	<div id="menu-container">
