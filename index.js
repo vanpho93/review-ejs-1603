@@ -1,5 +1,7 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
+const parser = bodyParser.urlencoded({ extended: false });
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -13,6 +15,12 @@ app.get('/', (req, res) => res.render('home', { mang : arrTin }));
 app.get('/admin', (req, res) => res.render('admin', { mang: arrTin }));
 
 app.get('/abcd', (req, res) => res.redirect('/admin'));
+
+app.post('/add', parser, (req, res) => {
+    const { title, desc, image, video } = req.body;
+    arrTin.push(new Tin(title, desc, video, image));
+    res.redirect('/admin');
+});
 
 class Tin {
     constructor(title, desc, idVideo, image) {
