@@ -10,6 +10,8 @@ app.listen(3000, () => console.log('Server started'));
 
 app.get('/', (req, res) => res.render('home', { mang : arrTin }));
 
+app.get('/admin', (req, res) => res.render('admin'));
+
 class Tin {
     constructor(title, desc, idVideo, image) {
         this.title = title;
