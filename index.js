@@ -22,6 +22,14 @@ app.post('/add', parser, (req, res) => {
     res.redirect('/admin');
 });
 
+app.get('/xoa/:index', (req, res) => {
+    const { index } = req.params;
+    arrTin.splice(index, 1);
+    res.redirect('/admin');
+});
+
+const obj = JSON.parse('{ "a": "Pho" }');
+
 class Tin {
     constructor(title, desc, idVideo, image) {
         this.title = title;
