@@ -10,7 +10,9 @@ app.listen(3000, () => console.log('Server started'));
 
 app.get('/', (req, res) => res.render('home', { mang : arrTin }));
 
-app.get('/admin', (req, res) => res.render('admin'));
+app.get('/admin', (req, res) => res.render('admin', { mang: arrTin }));
+
+app.get('/abcd', (req, res) => res.redirect('/admin'));
 
 class Tin {
     constructor(title, desc, idVideo, image) {
@@ -22,6 +24,6 @@ class Tin {
 }
 
 const arrTin = [
-    new Tin('NodeJS Khoa Pham', 'NodeJS duoc phat trien nam 2009 boi Dahl', 203803551,'1.png' ), 
-    new Tin('ReactJS Khoa Pham', 'ReactJS la 1 thu vien javascript de xay dung UI', 208130024,'2.jpg')
+    new Tin('NodeJS Khoa Pham', 'NodeJS duoc phat trien nam 2009 boi Dahl', 203803551,'1.jpg' ), 
+    new Tin('ReactJS Khoa Pham', 'ReactJS la 1 thu vien javascript de xay dung UI', 208130024,'2.png')
 ];

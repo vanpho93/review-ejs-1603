@@ -7,6 +7,9 @@
                 border: 1px solid black;
                 border-collapse: collapse;
             }
+            th, td {
+                padding: 15px;
+            }
         </style>
     </head>
     <body>
@@ -19,17 +22,31 @@
                 <td>Hinh anh</td>
                 <td>Quan tri</td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>NodeJS</td>
-                <td>NodeJS la 1 ma nguon mo</td>
-                <td>17263121</td>
-                <td><img src="./images/background/2.png" width="200"/></td>
-                <td>
-                    <a href="#">Xoa</a><br/>
-                    <a href="#">Sua</a>
-                </td>
-            </tr>
+
+            <% mang.forEach((e, i) => { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= e.title %></td>
+                    <td><%= e.desc %></td>
+                    <td><%= e.idVideo %></td>
+                    <td><img src="./images/background/<%= e.image %>" width="200"/></td>
+                    <td>
+                        <a href="#">Xoa</a><br/>
+                        <a href="#">Sua</a>
+                    </td>
+                </tr>
+            <% }) %>
         </table>
+        <form action="/add" method="POST">
+            <input type="text" name="title" placeholder="title"/>
+            <br><br>
+            <input type="text" name="desc" placeholder="desc"/>
+            <br><br>
+            <input type="text" name="image" placeholder="image"/>
+            <br><br>
+            <input type="text" name="video" placeholder="video"/>
+            <br><br>
+            <button>Add news</button>
+        </form>
     </body>
 </html>
