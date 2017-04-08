@@ -6,6 +6,7 @@
     </head>
     <body>
         <form action="/update" method="POST">
+            <input type="hidden" name="index" value="<%= index %>" />
             <input type="text" name="name" value="<%= title %>" placeholder="Enter name" />
             <br /><br />
             <input type="text" name="desc" value="<%= desc %>" placeholder="Enter Description" />
