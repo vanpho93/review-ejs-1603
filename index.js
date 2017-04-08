@@ -7,6 +7,11 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use((req, res, next) => {
+    console.log('A new request');
+    next();
+});
+
 app.use(express.static('public'));
 
 app.listen(process.env.PORT || 3000, () => console.log('Server started'));
@@ -17,6 +22,8 @@ app.get('/admin', (req, res) => {
     res.render('admin', { mang: arrTin });
     console.log('ABCD');
 });
+
+
 
 app.get('/abcd', (req, res) => res.redirect('/admin'));
 
@@ -59,6 +66,8 @@ class Tin {
         this.image = image;
     }
 }
+
+app.get('/mid', (req, res) => res.send(req.abcd));
 
 const arrTin = [
     new Tin('NodeJS Khoa Pham', 'NodeJS duoc phat trien nam 2009 boi Dahl', 203803551, '1.jpg'),
