@@ -12,7 +12,10 @@ app.listen(process.env.PORT || 3000, () => console.log('Server started'));
 
 app.get('/', (req, res) => res.render('home', { mang: arrTin }));
 
-app.get('/admin', (req, res) => res.render('admin', { mang: arrTin }));
+app.get('/admin', (req, res) => {
+    res.render('admin', { mang: arrTin });
+    console.log('ABCD');
+});
 
 app.get('/abcd', (req, res) => res.redirect('/admin'));
 
