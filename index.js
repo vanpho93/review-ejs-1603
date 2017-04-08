@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 app.listen(3000, () => console.log('Server started'));
 
-app.get('/', (req, res) => res.render('home', { mang : arrTin }));
+app.get('/', (req, res) => res.render('home', { mang: arrTin }));
 
 app.get('/admin', (req, res) => res.render('admin', { mang: arrTin }));
 
@@ -21,25 +21,29 @@ app.post('/add', parser, (req, res) => {
     arrTin.push(new Tin(title, desc, video, image));
     res.redirect('/admin');
 });
-
+//npm install eslint -g
+//yarn add eslint-config-rallycoding --dev
 app.get('/xoa/:index', (req, res) => {
     const { index } = req.params;
     arrTin.splice(index, 1);
     res.redirect('/admin');
 });
 
-const obj = JSON.parse('{ "a": "Pho" }');
+app.get('/sua/:index', (req, res) => {
+    const { index } = req.params;
+    res.render('update');
+});
 
 class Tin {
     constructor(title, desc, idVideo, image) {
         this.title = title;
         this.desc = desc;
         this.idVideo = idVideo;
-        this.image= image;
+        this.image = image;
     }
 }
 
 const arrTin = [
-    new Tin('NodeJS Khoa Pham', 'NodeJS duoc phat trien nam 2009 boi Dahl', 203803551,'1.jpg' ), 
-    new Tin('ReactJS Khoa Pham', 'ReactJS la 1 thu vien javascript de xay dung UI', 208130024,'2.png')
+    new Tin('NodeJS Khoa Pham', 'NodeJS duoc phat trien nam 2009 boi Dahl', 203803551, '1.jpg'),
+    new Tin('ReactJS Khoa Pham', 'ReactJS la 1 thu vien javascript de xay dung UI', 208130024, '2.png')
 ];
