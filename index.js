@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const upload = require('multer')({ dest: './public' });
 
 const parser = bodyParser.urlencoded({ extended: false });
 const app = express();
@@ -45,6 +46,10 @@ app.post('/sua', parser, (req, res) => {
     arrTin[index] = tin;
     res.redirect('/admin');
 });
+
+app.get('/upload', (req, res) => res.render('upload'));
+
+app.post('/upload', upload.single('avatar'), (req, res) => res.send('THANH_CONG'));
 
 class Tin {
     constructor(title, desc, idVideo, image) {
