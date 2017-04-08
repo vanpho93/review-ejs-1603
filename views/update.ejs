@@ -6,16 +6,17 @@
     </head>
     <body>
         <form action="/update" method="POST">
-            <input type="text" name="name" value="sasdac" placeholder="Enter name" />
+            <input type="text" name="name" value="<%= title %>" placeholder="Enter name" />
             <br /><br />
-            <input type="text" name="desc" value="sasdac" placeholder="Enter Description" />
+            <input type="text" name="desc" value="<%= desc %>" placeholder="Enter Description" />
             <br /><br />
-            <input type="text" name="idVideo" value="sasdac" placeholder="Enter id video" />
+            <input type="text" name="idVideo" value="<%= idVideo %>" placeholder="Enter id video" />
             <br /><br />
-            <input type="text" name="image" value="sasdac" placeholder="Enter image filname" />
+            <input type="text" name="image" value="<%= image %>" placeholder="Enter image filname" />
             <br /><br />
-            <img src="images/background/1.jpg" />
             <button>Submit</button>
+            <hr />
+            <img src="images/background/<%= image %>" width="300" />
         </form>
     </body>
 </html>

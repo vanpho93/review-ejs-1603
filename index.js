@@ -31,7 +31,8 @@ app.get('/xoa/:index', (req, res) => {
 
 app.get('/sua/:index', (req, res) => {
     const { index } = req.params;
-    res.render('update');
+    const tin = arrTin[index];
+    res.render('update', tin);
 });
 
 class Tin {
