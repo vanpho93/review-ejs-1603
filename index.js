@@ -8,7 +8,7 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-app.listen(3000, () => console.log('Server started'));
+app.listen(process.env.PORT || 3000, () => console.log('Server started'));
 
 app.get('/', (req, res) => res.render('home', { mang: arrTin }));
 
@@ -34,6 +34,13 @@ app.get('/sua/:index', (req, res) => {
     const tin = arrTin[index];
     tin.index = index;
     res.render('update', tin);
+});
+
+app.post('/sua', parser, (req, res) => {
+    const { index, name, desc, image, idVideo } = req.body;
+    const tin = new Tin(name, desc, idVideo, image);
+    arrTin[index] = tin;
+    res.redirect('/admin');
 });
 
 class Tin {
